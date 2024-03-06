@@ -96,7 +96,7 @@ export  class UserController {
     }
 
     static async checkUser(req, res){
-      let currentUser
+      let currentUser;
 
 
       if(req.headers.authorization){
@@ -136,11 +136,12 @@ export  class UserController {
       }
       const {name, email, password, confirmpassword} = req.body
 
-      let image = ''
+      //let image = ''
 
       if(req.file){
         user.image =  req.file.filename
       }
+      console.log(req.file)
 
 
        if(!name){

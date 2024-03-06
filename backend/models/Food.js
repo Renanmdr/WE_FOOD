@@ -32,6 +32,7 @@ const Food = mongoose.model(
                 
             },
             user: Object,
+            favorites: Object,
         },
         {timestamps: true}
     )
