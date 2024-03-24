@@ -142,7 +142,7 @@ export class FoodController {
 
         await Food.findByIdAndDelete(id)
 
-        res.status(200).json({message: 'Receita removido com sucesso!'})
+        res.status(200).json({message: 'Receita removida com sucesso!'})
     }
 
     static async updateFood(req, res){
@@ -203,14 +203,14 @@ export class FoodController {
 
         updateData.portions = portions
 
-        if(images.length === 0){
-            return res.status(422).json({message: 'A imagem é obrigatorias'})
-        }
-
-        updateData.images = []
-        images.map((image) => {
+        if(images.length > 0){
+            updateData.images = []
+            images.map((image) => {
             updateData.images.push(image.filename)
         })
+        }
+
+        
 
         await Food.findByIdAndUpdate(id, updateData)
 

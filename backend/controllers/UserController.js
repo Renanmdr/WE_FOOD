@@ -79,7 +79,7 @@ export  class UserController {
 
       // check if user exists
       if(!user){
-        return res.status(422).json({message: 'Não há usuario cadastrado com esse e-email'})
+        return res.status(422).json({message: 'Não há usuario cadastrado com esse e-mail'})
       }
 
       // check if password match with db password
@@ -141,13 +141,15 @@ export  class UserController {
       if(req.file){
         user.image =  req.file.filename
       }
-      console.log(req.file)
+    
 
 
        if(!name){
           return  res.status(422).json({message: 'O nome é obrigatorio!'})
 
         }
+
+        user.name = name
 
         if(!email){
           return  res.status(422).json({message: 'O e-mail é obrigatorio!'})

@@ -1,5 +1,6 @@
 import  express  from "express";
 import  cors  from 'cors'
+import 'dotenv/config.js'
 // import { router } from './routes/UserRoutes'
 import { router as UserRoutes } from "./routes/UserRoutes.js";
 import { router as FoodRoutes } from "./routes/FoodRoutes.js";

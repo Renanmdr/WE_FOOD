@@ -6,9 +6,9 @@ export const Context = createContext()
 
 // eslint-disable-next-line react/prop-types
 export const UserProvider = ({children}) => {
-    const { register } = useAuth()
+    const { register, authenticated, logout, login } = useAuth()
     return (
-        <Context.Provider value={{register}}>
+        <Context.Provider value={{register, authenticated, logout, login}}>
             {children}
         </Context.Provider>
     )
